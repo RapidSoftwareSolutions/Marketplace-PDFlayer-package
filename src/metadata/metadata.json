@@ -1,0 +1,76 @@
+{
+    "package": "PDFlayer",
+    "tagline": "The iTunes Search API allows you to place search fields in your website to search for content within the iTunes Store, App Store, iBooks Store and Mac App Store.",
+    "description": "The iTunes Search API allows you to place search fields in your website to search for content within the iTunes Store, App Store, iBooks Store and Mac App Store.",
+    "image": "https://logo.clearbit.com/pdflayer.com?s=128",
+    "repo": "https://github.com/RapidSoftwareSolutions/Marketplace-PDFlayer-package",
+    "keywords": [
+        "API",
+        "PDF",
+        "PDFlayer"
+    ],
+    "accounts": {
+        "domain": "pdflayer.com",
+        "credentials": [
+            "accessKey"
+        ]
+    },
+    "blocks": [
+        {
+            "name": "getPdfFromUrl",
+            "description": "Convert a site URL to a PDF document.",
+            "args": [
+                {
+                    "name": "accessKey",
+                    "type": "credentials",
+                    "info": "Your API Access Key.",
+                    "required": true
+                },
+                {
+                    "name": "documentUrl",
+                    "type": "String",
+                    "info": "Full, including the HTTP Protocol, path to page you want to convert to a PDF documen.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        },
+        {
+            "name": "getPdfFromHTML",
+            "description": "Convert a site URL to a PDF document.",
+            "args": [
+                {
+                    "name": "accessKey",
+                    "type": "credentials",
+                    "info": "Your API Access Key.",
+                    "required": true
+                },
+                {
+                    "name": "documentHtml",
+                    "type": "String",
+                    "info": "raw HTML code you would like to convert to a PDF document.",
+                    "required": true
+                }
+            ],
+            "callbacks": [
+                {
+                    "name": "error",
+                    "info": "Error"
+                },
+                {
+                    "name": "success",
+                    "info": "Success"
+                }
+            ]
+        }
+    ]
+}
