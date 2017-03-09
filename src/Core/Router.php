@@ -306,7 +306,7 @@ class Router
                                 $resultDecoded = json_decode($gcloud, true);
                                 $result['callback'] = 'success';
                                 $result['contextWrites']['to'] = ($resultDecoded != NULL) ? $resultDecoded : $gcloud;
-                            } catch (GuzzleHttp\Exception\BadResponseException $exception) {
+                            } catch (\GuzzleHttp\Exception\BadResponseException $exception) {
                                 $result['callback'] = 'error';
                                 $result['contextWrites']['to']['status_code'] = 'INTERNAL_PACKAGE_ERROR';
                                 $result['contextWrites']['to']['status_msg'] = 'Something went wrong during file link receiving.';

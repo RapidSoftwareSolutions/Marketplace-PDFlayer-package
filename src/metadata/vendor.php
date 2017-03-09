@@ -57,7 +57,7 @@ return array (
                 ),
                 array (
                     'name' => 'documentHtml',
-                    'type' => 'String',
+                    'type' => 'File',
                     'info' => 'raw HTML code you would like to convert to a PDF document.',
                     'required' => true,
                 ),
