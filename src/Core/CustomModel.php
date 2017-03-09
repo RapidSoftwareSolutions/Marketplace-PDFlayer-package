@@ -17,7 +17,7 @@ class CustomModel
     }
     public static function getPdfFromHTML($param, &$blockCustom, $vendorUrl){
         $result['query']['access_key'] = $param['access_key'];
-        $result['form_params']['document_html'] = file_get_contents($param['document_html']);
+        @$result['form_params']['document_html'] = file_get_contents($param['document_html']);
 
         return $result;
     }

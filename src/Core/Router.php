@@ -281,20 +281,26 @@ class Router
                 ->then(
                     function (\Psr\Http\Message\ResponseInterface $response) use ($client, &$result) {
                         $responseApi = $response->getBody()->getContents();
-                        $fileName = $response->getHeader('Content-Disposition');
-                        if(isset($fileName[0])){
-                            $fileName = explode('filename=', $fileName[0]);
-                            $fileName = $fileName[1];
-                        }else{
-                            $fileName = 'pdflayer.pdf';
+
+                        $contentType = $response->getHeader('Content-Type');
+                        if(!isset($contentType[0])||$contentType[0] != 'application/pdf'){
+                            $result = [];
+                            $result['callback'] = 'error';
+                            $result['contextWrites']['to']['status_code'] = 'API_ERROR';
+                            $result['contextWrites']['to']['status_msg'] = 'Bad fields value.';
+                            return $result;
                         }
 
                         if (in_array($response->getStatusCode(), ['200', '201', '202', '203', '204'])) {
                             try {
                                 $fileUrl = $client->post('http://104.198.149.144:8080', [
                                     'multipart' => [[
+                                            'name' => 'length',
+                                            'contents' => strlen($responseApi),
+                                        ],
+                                        [
                                             'name' => 'file',
-                                            'filename' => $fileName,
+                                            'filename' => 'pdflayer.pdf',
                                             'contents' => $responseApi
                                     ]]]);
                                 $gcloud = $fileUrl->getBody()->getContents();
