@@ -1,7 +1,7 @@
 [![](https://scdn.rapidapi.com/RapidAPI_banner.png)](https://rapidapi.com/package/PDFlayer/functions?utm_source=RapidAPIGitHub_PDFlayerFunctions&utm_medium=button&utm_content=RapidAPI_GitHub)
 
 # PDFlayer Package
-The iTunes Search API allows you to place search fields in your website to search for content within the iTunes Store, App Store, iBooks Store and Mac App Store.
+Connect to the PDFlayer API to create highly customizable PDFs from URLs & HTML. Test a PDFlayer API call in your browser and export the code into your app.
 * Domain: pdflayer.com
 * Credentials: accessKey
 

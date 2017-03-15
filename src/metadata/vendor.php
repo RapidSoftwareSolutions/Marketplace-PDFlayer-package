@@ -1,8 +1,8 @@
 <?php
 return array (
     'package' => 'PDFlayer',
-    'tagline' => 'High Quality HTML to PDF conversion API for Developers.',
-    'description' => 'High Quality HTML to PDF conversion API for Developers.',
+    'tagline' => 'Create highly customizable PDFs from URLs & HTML.',
+    'description' => 'Connect to the PDFlayer API to create highly customizable PDFs from URLs & HTML. Test a PDFlayer API call in your browser and export the code into your app.',
     'image' => 'https://logo.clearbit.com/pdflayer.com?s=128',
     'repo' => 'https://github.com/RapidSoftwareSolutions/Marketplace-PDFlayer-package',
     'keywords' => array (
